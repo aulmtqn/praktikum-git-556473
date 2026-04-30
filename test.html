@@ -1,11 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docs</title>
+    <title>Portofolio - Aulia Muttaqin</title>
+    <style>
+        /* Pengaturan Dasar */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Navigasi */
+        nav {
+            background-color: #1f1f1f;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #00d2ff;
+        }
+
+        /* Bagian Header/Hero */
+        header {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #1f1f1f 0%, #121212 100%);
+            border-bottom: 1px solid #333;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #00d2ff;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #aaaaaa;
+        }
+
+        /* Konten Utama */
+        section {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            border-bottom: 2px solid #00d2ff;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        /* Kartu Proyek */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 600px) {
+            .project-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .project-card {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d2ff;
+        }
+        .project-card h3 {
+            margin-top: 0;
+            color: #00d2ff;
+        }
+        .tags {
+            font-size: 0.85em;
+            color: #ff9900;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0a0a0a;
+            color: #777;
+            border-top: 1px solid #333;
+        }
+        footer a {
+            color: #00d2ff;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    Commit kedua dengan perubahan pada file test.html
+
+    <nav>
+        <a href="#about">Tentang</a>
+        <a href="#skills">Keahlian</a>
+        <a href="#projects">Proyek</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+
+    <header>
+        <h1>Aulia Muttaqin</h1>
+        <p>Software Engineering Student | Game Developer</p>
+    </header>
+
+    <section id="about">
+        <h2>Tentang Saya</h2>
+        <p>Halo! Saya adalah mahasiswa Teknologi Rekayasa Perangkat Lunak dengan antusiasme tinggi di bidang pengembangan perangkat lunak dan game. Saya berfokus pada perancangan mekanik gameplay, optimalisasi performa, dan penciptaan aset 3D yang imersif.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Keahlian Utama</h2>
+        <ul>
+            <li><strong>Game Engine & 3D:</strong> Unreal Engine 5, Blueprints, Blender</li>
+            <li><strong>Programming:</strong> C++, Python</li>
+            <li><strong>Desain & Tools:</strong> Figma, Canva, LaTeX</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Proyek Pilihan</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Mahasiswa Simulator</h3>
+                <span class="tags">Unreal Engine 5 | C++ | Commercial Game</span>
+                <p>Game simulasi yang berfokus pada kehidupan mahasiswa. Proyek ini mencakup pengembangan mekanik gameplay yang interaktif dan integrasi aset 3D kustom.</p>
+            </div>
+            <div class="project-card">
+                <h3>Arena Shooter Game</h3>
+                <span class="tags">Solo Development | Unreal Engine</span>
+                <p>Sebuah proyek tantangan pribadi berupa game shooter arena fungsional yang berhasil dikembangkan secara solo dari tahap konsep hingga selesai dalam waktu 10 hari.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Mari Terhubung</h2>
+        <p>Tertarik untuk berkolaborasi atau berdiskusi lebih lanjut? Anda bisa menghubungi saya melalui:</p>
+        <p>
+            Email: <a href="mailto:auliamuttaqinlubis@example.com">auliamuttaqinlubis@example.com</a> <br>
+            LinkedIn: <a href="https://linkedin.com/in/aulmtqn" target="_blank">linkedin.com/in/username</a> <br>
+            GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a>
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Aulia Muttaqin. Dibuat dengan HTML & CSS.</p>
+    </footer>
+
 </body>
 </html>
