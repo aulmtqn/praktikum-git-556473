@@ -6,7 +6,6 @@
     <title>Aulia Muttaqin | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables untuk ganti warna lebih gampang */
         :root {
             --bg-color: #0a192f;
             --text-main: #ccd6f6;
@@ -15,7 +14,6 @@
             --card-bg: #112240;
         }
 
-        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -31,23 +29,47 @@
             overflow-x: hidden;
         }
 
-        /* Glassmorphism Navbar */
+        /* Navbar */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             background: rgba(10, 25, 47, 0.85);
             backdrop-filter: blur(10px);
-            padding: 20px 0;
             z-index: 100;
-            text-align: center;
             box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7);
         }
 
-        nav a {
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #e6f1ff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
             color: var(--text-main);
             text-decoration: none;
-            margin: 0 20px;
             font-size: 0.9rem;
             font-weight: 600;
             letter-spacing: 1px;
@@ -55,18 +77,68 @@
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             color: var(--accent);
         }
 
-        /* Layout Container */
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 101;
+        }
+
+        .menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 0;
+                right: -100%; 
+                height: 100vh;
+                width: 250px;
+                background-color: var(--card-bg);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                box-shadow: -10px 0 30px -10px rgba(2,12,27,0.7);
+            }
+
+            .nav-links.active {
+                right: 0; 
+            }
+
+            .menu-toggle.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .menu-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+
+        /* Layout */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Hero Section */
+        /* Header / Hero */
         header {
             min-height: 100vh;
             display: flex;
@@ -104,7 +176,7 @@
             font-size: 1.1rem;
         }
 
-        /* Section Global */
+        /* Global Section */
         section {
             padding: 100px 0;
         }
@@ -126,6 +198,13 @@
             margin-left: 20px;
         }
 
+        @media (max-width: 768px) {
+            .section-title::after {
+                width: 100%;
+                margin-left: 15px;
+            }
+        }
+
         /* Skills */
         .skills-container {
             display: flex;
@@ -143,7 +222,7 @@
             border: 1px solid rgba(100, 255, 218, 0.3);
         }
 
-        /* Projects Grid */
+        /* Projects */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -186,7 +265,7 @@
             color: var(--text-secondary);
         }
 
-        /* Contact Section */
+        /* Contact */
         #contact {
             text-align: center;
             max-width: 600px;
@@ -217,22 +296,96 @@
             background: rgba(100, 255, 218, 0.1);
         }
 
-        /* Footer */
-        footer {
+        /* --- FOOTER UPGRADE MULAI DI SINI --- */
+        .site-footer {
+            background-color: #020c1b;
+            padding: 60px 20px 20px;
+            border-top: 1px solid #233554;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            padding: 25px;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .footer-info h3 {
+            color: #e6f1ff;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            max-width: 350px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-family: monospace;
+            padding: 8px 15px;
+            border: 1px solid var(--text-secondary);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1000px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
             font-family: monospace;
             color: var(--text-secondary);
             font-size: 0.85rem;
         }
+        /* --- FOOTER UPGRADE SELESAI --- */
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#about">Tentang</a>
-        <a href="#projects">Proyek</a>
-        <a href="#contact">Kontak</a>
+        <div class="nav-container">
+            <a href="#" class="logo">Aulia<span>.</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#projects">Proyek</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
     </nav>
 
     <div class="container">
@@ -287,13 +440,44 @@
         <section id="contact">
             <h2 class="section-title">Mari Berkolaborasi</h2>
             <p style="color: var(--text-secondary);">Baik untuk diskusi tentang pengembangan game, peluang kolaborasi teknis, atau sekadar bertukar sapa, kotak masuk saya selalu terbuka.</p>
-            <a href="mailto:auliamuttaqinlubis@mail.ugm.ac.id" class="btn">Kirim Pesan</a>
+            <a href="mailto:emailkamu@example.com" class="btn">Kirim Pesan</a>
         </section>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Aulia Muttaqin. Dirancang & Dibangun dengan HTML & CSS.</p>
+    <!-- Bagian Footer Baru -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Aulia Muttaqin</h3>
+                <p>Mahasiswa Rekayasa Perangkat Lunak & Game Developer yang berbasis di Yogyakarta. Bersemangat membangun interaksi digital dan dunia 3D yang imersif.</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/aulmtqn" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/aulia-muttaqin-85aa73381/" target="_blank">LinkedIn</a>
+                <a href="mailto:auliamuttaqinlubis@mail.ugm.ac.id">Email</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aulia Muttaqin. Dirancang & Dibangun dengan HTML, CSS, & JS.</p>
+        </div>
     </footer>
 
+    <script>
+        const menuToggle = document.querySelector('#mobile-menu');
+        const navLinks = document.querySelector('#nav-links');
+        const links = document.querySelectorAll('.nav-links li a');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
