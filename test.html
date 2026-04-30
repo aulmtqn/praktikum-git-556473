@@ -81,6 +81,7 @@
             color: var(--accent);
         }
 
+        /* Hamburger Menu */
         /* Hamburger Menu untuk Mobile */
         .menu-toggle {
             display: none;
@@ -106,6 +107,7 @@
             .nav-links {
                 position: absolute;
                 top: 0;
+                right: -100%; 
                 right: -100%; /* Sembunyikan di luar layar */
                 height: 100vh;
                 width: 250px;
@@ -118,6 +120,9 @@
             }
 
             .nav-links.active {
+                right: 0; 
+            }
+
                 right: 0; /* Munculkan menu */
             }
 
@@ -132,6 +137,8 @@
                 transform: translateY(-8px) rotate(-45deg);
             }
         }
+
+        /* Layout */
         /* --- NAVBAR UPGRADE SELESAI --- */
 
         .container {
@@ -140,6 +147,7 @@
             padding: 0 20px;
         }
 
+        /* Header / Hero */
         header {
             min-height: 100vh;
             display: flex;
@@ -177,6 +185,7 @@
             font-size: 1.1rem;
         }
 
+        /* Global Section */
         section {
             padding: 100px 0;
         }
@@ -205,6 +214,7 @@
             }
         }
 
+        /* Skills */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
@@ -221,6 +231,7 @@
             border: 1px solid rgba(100, 255, 218, 0.3);
         }
 
+        /* Projects */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -263,6 +274,7 @@
             color: var(--text-secondary);
         }
 
+        /* Contact */
         #contact {
             text-align: center;
             max-width: 600px;
@@ -293,19 +305,86 @@
             background: rgba(100, 255, 218, 0.1);
         }
 
+        /* --- FOOTER UPGRADE MULAI DI SINI --- */
+        .site-footer {
+            background-color: #020c1b;
+            padding: 60px 20px 20px;
+            border-top: 1px solid #233554;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .footer-info h3 {
+            color: #e6f1ff;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            max-width: 350px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-family: monospace;
+            padding: 8px 15px;
+            border: 1px solid var(--text-secondary);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1000px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         footer {
             text-align: center;
-            padding: 25px;
             font-family: monospace;
             color: var(--text-secondary);
             font-size: 0.85rem;
         }
+        /* --- FOOTER UPGRADE SELESAI --- */
     </style>
 </head>
 <body>
 
     <nav>
         <div class="nav-container">
+            <a href="#" class="logo">Aulia<span>.</span></a>
             <!-- Logo Navbar -->
             <a href="#" class="logo">Aulia<span>.</span></a>
             
@@ -380,6 +459,24 @@
             <a href="mailto:emailkamu@example.com" class="btn">Kirim Pesan</a>
         </section>
     </div>
+
+    <!-- Bagian Footer Baru -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Aulia Muttaqin</h3>
+                <p>Mahasiswa Rekayasa Perangkat Lunak & Game Developer yang berbasis di Yogyakarta. Bersemangat membangun interaksi digital dan dunia 3D yang imersif.</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/aulmtqn" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/aulia-muttaqin-85aa73381/" target="_blank">LinkedIn</a>
+                <a href="mailto:auliamuttaqinlubis@mail.ugm.ac.id">Email</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aulia Muttaqin. Dirancang & Dibangun dengan HTML, CSS, & JS.</p>
+        </div>
+    </footer>
 
     <footer>
         <p>&copy; 2026 Aulia Muttaqin. Dirancang & Dibangun dengan HTML, CSS, & JS.</p>
