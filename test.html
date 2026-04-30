@@ -29,7 +29,7 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVBAR --- */
+        /* --- NAVBAR UPGRADE MULAI DI SINI --- */
         nav {
             position: fixed;
             top: 0;
@@ -81,6 +81,7 @@
             color: var(--accent);
         }
 
+        /* Hamburger Menu */
         /* Hamburger Menu untuk Mobile */
         .menu-toggle {
             display: none;
@@ -106,6 +107,7 @@
             .nav-links {
                 position: absolute;
                 top: 0;
+                right: -100%; 
                 right: -100%; /* Sembunyikan di luar layar */
                 height: 100vh;
                 width: 250px;
@@ -118,6 +120,9 @@
             }
 
             .nav-links.active {
+                right: 0; 
+            }
+
                 right: 0; /* Munculkan menu */
             }
 
@@ -134,6 +139,8 @@
         }
 
         /* Layout */
+        /* --- NAVBAR UPGRADE SELESAI --- */
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -298,7 +305,7 @@
             background: rgba(100, 255, 218, 0.1);
         }
 
-        /* --- FOOTER --- */
+        /* --- FOOTER UPGRADE MULAI DI SINI --- */
         .site-footer {
             background-color: #020c1b;
             padding: 60px 20px 20px;
@@ -364,18 +371,21 @@
             margin: 40px auto 0;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+        footer {
             text-align: center;
             font-family: monospace;
             color: var(--text-secondary);
             font-size: 0.85rem;
         }
+        /* --- FOOTER UPGRADE SELESAI --- */
     </style>
 </head>
 <body>
 
     <nav>
         <div class="nav-container">
-            <!-- Logo Navbar yang sudah diperbaiki -->
+            <a href="#" class="logo">Aulia<span>.</span></a>
+            <!-- Logo Navbar -->
             <a href="#" class="logo">Aulia<span>.</span></a>
             
             <!-- Tombol Hamburger -->
@@ -450,6 +460,7 @@
         </section>
     </div>
 
+    <!-- Bagian Footer Baru -->
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-info">
@@ -465,6 +476,10 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Aulia Muttaqin. Dirancang & Dibangun dengan HTML, CSS, & JS.</p>
         </div>
+    </footer>
+
+    <footer>
+        <p>&copy; 2026 Aulia Muttaqin. Dirancang & Dibangun dengan HTML, CSS, & JS.</p>
     </footer>
 
     <!-- Script kecil agar tombol Hamburger Menu berfungsi di HP -->
