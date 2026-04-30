@@ -29,7 +29,7 @@
             overflow-x: hidden;
         }
 
-        /* Navbar */
+        /* --- NAVBAR UPGRADE MULAI DI SINI --- */
         nav {
             position: fixed;
             top: 0;
@@ -82,6 +82,7 @@
         }
 
         /* Hamburger Menu */
+        /* Hamburger Menu untuk Mobile */
         .menu-toggle {
             display: none;
             cursor: pointer;
@@ -97,6 +98,7 @@
             transition: all 0.3s ease;
         }
 
+        /* Mobile Responsive Navbar */
         @media (max-width: 768px) {
             .menu-toggle {
                 display: flex;
@@ -106,6 +108,7 @@
                 position: absolute;
                 top: 0;
                 right: -100%; 
+                right: -100%; /* Sembunyikan di luar layar */
                 height: 100vh;
                 width: 250px;
                 background-color: var(--card-bg);
@@ -120,6 +123,10 @@
                 right: 0; 
             }
 
+                right: 0; /* Munculkan menu */
+            }
+
+            /* Animasi Hamburger menjadi 'X' */
             .menu-toggle.active .bar:nth-child(1) {
                 transform: translateY(8px) rotate(45deg);
             }
@@ -132,6 +139,8 @@
         }
 
         /* Layout */
+        /* --- NAVBAR UPGRADE SELESAI --- */
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -362,6 +371,7 @@
             margin: 40px auto 0;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+        footer {
             text-align: center;
             font-family: monospace;
             color: var(--text-secondary);
@@ -375,11 +385,17 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">Aulia<span>.</span></a>
+            <!-- Logo Navbar -->
+            <a href="#" class="logo">Aulia<span>.</span></a>
+            
+            <!-- Tombol Hamburger -->
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
+
+            <!-- Link Navbar -->
             <ul class="nav-links" id="nav-links">
                 <li><a href="#about">Tentang</a></li>
                 <li><a href="#projects">Proyek</a></li>
@@ -462,16 +478,23 @@
         </div>
     </footer>
 
+    <footer>
+        <p>&copy; 2026 Aulia Muttaqin. Dirancang & Dibangun dengan HTML, CSS, & JS.</p>
+    </footer>
+
+    <!-- Script kecil agar tombol Hamburger Menu berfungsi di HP -->
     <script>
         const menuToggle = document.querySelector('#mobile-menu');
         const navLinks = document.querySelector('#nav-links');
         const links = document.querySelectorAll('.nav-links li a');
 
+        // Fungsi klik untuk membuka/tutup menu
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
 
+        // Menutup menu otomatis saat salah satu link diklik (di HP)
         links.forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
