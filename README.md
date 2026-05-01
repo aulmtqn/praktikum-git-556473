@@ -87,3 +87,10 @@ Manajemen tugas dan bug dilakukan menggunakan fitur **GitHub Issues**. Setiap tu
 | `git log --oneline --graph` | Melihat visualisasi riwayat commit. |
 | `git rebase -i` | Melakukan pembersihan atau penggabungan commit (*squash*). |
 | `git switch -c [nama_branch]` | Membuat branch baru dan langsung berpindah ke dalamnya. |
+
+![git clone](git%20clone.png)
+![cd dan git add](cd%20dan%20git%20add.png)
+![Gitcommit&push](Gitcommit&push.png)
+! [Branch push](Branch%20push.png)
+
+
