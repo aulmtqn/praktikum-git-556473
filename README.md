@@ -91,6 +91,6 @@ Manajemen tugas dan bug dilakukan menggunakan fitur **GitHub Issues**. Setiap tu
 ![git clone](git%20clone.png)
 ![cd dan git add](cd%20dan%20git%20add.png)
 ![Gitcommit&push](Gitcommit&push.png)
-! [Branch push](Branch%20push.png)
+![Branch push](Branch%20push.png)
 
 
